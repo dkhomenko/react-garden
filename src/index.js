@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 let model = { title: "gardening" };
+
+function Home() {
+    return <App title={model.title} onClick={() => { model.title = model.title + '!'; render(); } } />;
+}
+
+function About() {
+    return <div>All about gardening!</div>;
+}
+
 function render() {
-    ReactDOM.render(<App title={model.title} onClick={() => { model.title = model.title + '!'; render(); } } />, document.getElementById('root'));
+    ReactDOM.render(
+        <BrowserRouter>
+            <React.Fragment>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+            </React.Fragment>
+        </BrowserRouter>, document.getElementById('root'));
 }
 render();
 // If you want your app to work offline and load faster, you can change
