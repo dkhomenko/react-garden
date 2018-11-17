@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import Home from './Home';
 import * as serviceWorker from './serviceWorker';
 
 let model = { title: "gardening" };
 
-function Home() {
-    return <App title={model.title} onClick={() => { model.title = model.title + '!'; render(); } } />;
+function HomePage() {
+    return <Home title={model.title} onClick={() => { model.title = model.title + '!'; render(); } } />;
 }
 
-function About() {
+function AboutPage() {
     return <div>All about gardening!</div>;
 }
 
@@ -19,8 +19,8 @@ function render() {
     ReactDOM.render(
         <BrowserRouter>
             <React.Fragment>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
+                <Route exact path="/" component={HomePage} />
+                <Route path="/about" component={AboutPage} />
             </React.Fragment>
         </BrowserRouter>, document.getElementById('root'));
 }
