@@ -3,9 +3,9 @@ import React from 'react';
 const Item = (props) => {
     return (
         <div>
-            <div>Id</div>
-            <div>Name</div>
-            <div>Plant family</div>
+            <div>{props.id}</div>
+            <div>{props.name}</div>
+            <div>{props.plantFamily}</div>
         </div>
     );
 };

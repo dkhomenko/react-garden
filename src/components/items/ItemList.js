@@ -5,7 +5,7 @@ const ItemList = (props) => {
     return (
         <div>
             <h1>All Items</h1>
-            <Item />
+            {props.items.map((itm) => <Item key={itm.id} {...itm} />)}
         </div>
     );
 };
