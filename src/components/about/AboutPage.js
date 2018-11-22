@@ -4,7 +4,7 @@ class AboutPage extends Component {
   render() {
     return (
       <div>
-        This is the about page.
+        Garden Explorer helps you with your garden.
       </div>
     );
   }

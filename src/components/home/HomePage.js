@@ -4,7 +4,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        This is the home page.
+        Welcome to Garden Explorer.
       </div>
     );
   }
