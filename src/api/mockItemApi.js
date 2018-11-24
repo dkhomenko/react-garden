@@ -23,7 +23,7 @@ const items = [
 
 //This would be performed on the server in a real app. Just stubbing in.
 const generateId = () => {
-  return Math.max(...items.map(itm => itm.id), 1);
+  return Math.max(...items.map(itm => itm.id), 0) + 1;
 };
 
 class ItemApi {
