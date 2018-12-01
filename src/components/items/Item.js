@@ -2,11 +2,12 @@ import React from 'react';
 
 const Item = (props) => {
     return (
-        <div>
-            <div>{props.id}</div>
-            <div>{props.name}</div>
-            <div>{props.plantFamily}</div>
-        </div>
+        <tr>
+            <td>{props.id}</td>
+            <td>{props.name}</td>
+            <td>{props.plantFamily}</td>
+            <td></td>
+        </tr>
     );
 };
 
