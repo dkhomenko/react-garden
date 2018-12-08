@@ -5,15 +5,30 @@ import ItemForm from './ItemForm';
 class ManageItemPage extends Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
-            item: Object.assign({}, props.item),
+            item: {
+                id: 0,
+                name: '',
+                plantFamily: ''
+            },
             errors: {}
         };
 
         this.addItem = this.addItem.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
         this.clearFields = this.clearFields.bind(this);
+    }
+
+    componentDidMount() {
+        const { match: { params }} = this.props;
+        
+        const itemId = parseInt(params.id);
+        if (itemId) {
+            ItemApi.getItem(itemId).then((item) => {
+                this.setState({ item });
+            });
+        }
     }
 
     onFieldChange(event) {

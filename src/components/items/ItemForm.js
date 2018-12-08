@@ -7,7 +7,7 @@ const ItemForm = (props) => {
             <form onSubmit={props.addItem}>
                 <input type='text' name='name' placeholder='Name' value={props.item.name} onChange={props.onFieldChange} /> <br/>
                 <input type='text' name='plantFamily' placeholder='Plant Family' value={props.item.plantFamily} onChange={props.onFieldChange} /> <br/>
-                <button type='submit'>Add</button>
+                <button type='submit'>Save</button>
             </form>
         </div>
     );

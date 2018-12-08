@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ItemList from './ItemList';
 import ItemApi from '../../api/mockItemApi';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class ItemsPage extends Component {
     constructor(props) {

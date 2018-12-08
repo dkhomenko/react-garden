@@ -26,7 +26,21 @@ const generateId = () => {
   return Math.max(...items.map(itm => itm.id), 0) + 1;
 };
 
+function getItemById(id) {
+  const item = items.filter(i => i.id === id);
+  if (item.length) return item[0];
+  return null;
+}
+
 class ItemApi {
+  static getItem(id) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Object.assign({}, getItemById(id)));
+      })
+    }, delay);
+  }
+
   static getAllItems() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
